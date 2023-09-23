@@ -1,0 +1,21 @@
+public class EquilibriumPoint{
+    public static void main(String[] args) {
+        int[] arr = {1};
+        System.out.println(equiPoint(arr));
+    }
+
+    private static int equiPoint(int[] arr) {
+        int total = 0;
+        for(int i=0;i<arr.length;i++){
+            total += arr[i];
+        }
+        int sum1 = 0;
+        for(int i=0;i<arr.length;i++){
+            if(sum1 == total-sum1-arr[i]){
+                return i+1;
+            }
+            sum1 += arr[i];
+        }
+        return -1;
+    }
+}
